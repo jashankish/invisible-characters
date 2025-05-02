@@ -1,72 +1,80 @@
-# ✨ Invisible Character Viewer 🕵️‍♂️
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-%23000000.svg?style=for-the-badge&logo=next.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" />
+</p>
 
-A sleek **Next.js** application to **detect and highlight invisible and zero-width characters** in your text! 🔍
+<h1 align="center">🕵️‍♀️ Invisible Character Viewer</h1>
 
----
-
-## 🚀 Features
-
-* 📋 Paste text to identify invisible characters
-* 🎯 Highlights invisible characters with visual indicators
-* 📊 Displays statistics of detected characters
-* 🧠 Comprehensive detection of invisible characters
-* 🌒 Dark theme with red accent styling
+<p align="center">A sleek Next.js app to highlight and visualize invisible characters in any pasted text</p>
 
 ---
 
-## 🧙‍♂️ Detected Characters
+## ✨ Features
 
-This app detects a wide range of invisible characters, including:
-
-* ␀ Null, ↹ Tab, ⏎ Line Feed, ↩️ Carriage Return
-* ␣ Spaces (regular, non-breaking, en/em spaces)
-* 🕳️ Zero-width characters (space, joiner, non-joiner)
-* 🔀 Directional formatting characters
-* 🧩 Many other special Unicode whitespace and control characters
+* 📋 **Paste text** to identify hidden/invisible characters
+* 🔍 **Visual highlighting** of zero-width and control characters
+* 📊 **Detailed stats** on character types detected
+* 🧠 **Extensive detection** (Unicode whitespace, formatting, etc.)
+* 🖤 **Modern dark theme** with 🔴 red-accented styling
 
 ---
 
-## 🛠️ Getting Started
+## 🔎 Detected Characters
 
-### ✅ Prerequisites
+The viewer supports a wide array of hard-to-spot characters:
 
-* ⚙️ Node.js `16.8.0` or later
-* 📦 npm or yarn
-
-### 📦 Installation
-
-1. **Clone this repository:**
-
-   ```bash
-   git clone https://github.com/jashankish/invisible-characters.git
-   cd invisible-character-viewer
-   ```
-
-2. **Install dependencies:**
-
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Run the development server:**
-
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-4. **Open your browser:**
-
-   👉 [http://localhost:3000](http://localhost:3000)
+| Category               | Examples                                       |
+| ---------------------- | ---------------------------------------------- |
+| **Control Characters** | ␀ Null, ↹ Tab, ⏎ Line Feed, ↩️ Carriage Return |
+| **Space Variants**     | ␣ Space,   Non-breaking,   En/Em spaces        |
+| **Zero-Width**         | 🕳️ ZW Space, Joiner, Non-Joiner               |
+| **Directional/Format** | 🔀 LRM, RLM, LRE, PDF, etc.                    |
+| **Unicode Oddities**   | 🧩 U+2060, U+180E, U+FEFF...                   |
 
 ---
 
-## 🏗️ Building for Production
+## ⚙️ Getting Started
 
-To build the application:
+### 🔧 Prerequisites
+
+* Node.js `>=16.8.0`
+* `npm` or `yarn` installed
+
+---
+
+### 📥 Installation
+
+```bash
+git clone https://github.com/jashankish/invisible-characters.git
+cd invisible-character-viewer
+```
+
+```bash
+npm install
+# or
+yarn install
+```
+
+---
+
+### 🧪 Run Locally
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Then open your browser and visit:
+
+👉 **[http://localhost:3000](http://localhost:3000)**
+
+---
+
+## 📦 Production Build
+
+To build for production:
 
 ```bash
 npm run build
@@ -74,7 +82,7 @@ npm run build
 yarn build
 ```
 
-Then, start the production server:
+To start the production server:
 
 ```bash
 npm run start
@@ -84,58 +92,57 @@ yarn start
 
 ---
 
-## 🧰 Technology Stack
+## 🧰 Tech Stack
 
-* ⚛️ [Next.js](https://nextjs.org/) – React Framework
-* 🧱 [React](https://reactjs.org/) – UI Library
-* 🧑‍💻 [TypeScript](https://www.typescriptlang.org/) – Type-safe JavaScript
+* ⚛️ **[Next.js](https://nextjs.org/)** – React framework for production apps
+* ⚛️ **[React](https://reactjs.org/)** – Component-based UI
+* 🧑‍💻 **[TypeScript](https://www.typescriptlang.org/)** – Type-safe coding experience
 
 ---
 
-## 🗂 Project Structure
+## 📁 Project Structure
 
 ```
 invisible-character-viewer/
 │
-├── app/                      # Next.js app directory
-│   ├── page.tsx              # Main page component
+├── app/                      # App directory (Next.js 13+)
+│   ├── page.tsx              # Main UI page
 │   ├── layout.tsx            # Root layout
 │   └── globals.css           # Global styles
 │
-├── components/               # React components
+├── components/               # UI components
 │   └── InvisibleCharacterViewer.tsx
 │
-├── lib/                      # Utility functions and data
+├── lib/                      # Utility logic
 │   └── invisibleCharacters.ts
 │
 ├── public/                   # Static assets
-│
-├── package.json              # Dependencies and scripts
-├── next.config.js            # Next.js configuration
-└── tsconfig.json             # TypeScript configuration
+├── package.json              # Scripts & dependencies
+├── next.config.js            # Next.js config
+└── tsconfig.json             # TypeScript config
 ```
 
 ---
 
-## 🔍 How It Works
+## 🧠 How It Works
 
-This app analyzes each character in the input text and compares it against a comprehensive database of invisible characters. 🧮
+The viewer parses every character of your input and matches it against a **curated Unicode set of invisible characters**.
 
-✔️ Detected characters are replaced with a **visible representation** in the output.
-✔️ Detection is **fully client-side** – no server, no data transmission.
+✨ All detection is **client-side**. Your data never leaves your browser.
+
+🔍 Each detected character is swapped with a **visible marker**, preserving layout and content boundaries.
 
 ---
 
 ## 📄 License
 
-Licensed under the **MIT License** – see the `LICENSE` file for details.
+This project is licensed under the **MIT License**.
+See the [`LICENSE`](./LICENSE) file for details.
 
 ---
 
-## 🙌 Acknowledgments
+## 🙏 Acknowledgments
 
-* 🙏 Unicode character data from the [Unicode Consortium](https://unicode.org/)
+* Unicode data provided by the amazing [Unicode Consortium](https://unicode.org/)
 
 ---
-
-Let me know if you'd like a badge section or markdown preview snippet too!
